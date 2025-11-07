@@ -1,4 +1,4 @@
- document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
     
     // Funcionalidad para el modo oscuro
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -37,6 +37,24 @@
       }
     });
     
+    // Funcionalidad del menú hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const mobileLinks = document.querySelectorAll('#mobileMenu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
     function switchToEnglish() {
       // Header superior
       document.getElementById('darkModeText').textContent = 'Dark mode';
@@ -49,6 +67,13 @@
       document.getElementById('navServicios').textContent = 'Services';
       document.getElementById('navProductos').textContent = 'Products +';
       document.getElementById('navContacto').textContent = 'Contact';
+      
+      // Menú móvil
+      document.getElementById('mobileNavInicio').textContent = 'Home';
+      document.getElementById('mobileNavNosotros').textContent = 'About Us';
+      document.getElementById('mobileNavServicios').textContent = 'Services';
+      document.getElementById('mobileNavProductos').textContent = 'Products +';
+      document.getElementById('mobileNavContacto').textContent = 'Contact';
       
       // Hero section
       document.getElementById('mainTitle').innerHTML = 'SOLUMAQ = <span class="text-solumaqYellow">solutions that boost your productivity</span>';
@@ -113,6 +138,13 @@
       document.getElementById('navServicios').textContent = 'Servicios';
       document.getElementById('navProductos').textContent = 'Productos +';
       document.getElementById('navContacto').textContent = 'Contacto';
+      
+      // Menú móvil
+      document.getElementById('mobileNavInicio').textContent = 'Inicio';
+      document.getElementById('mobileNavNosotros').textContent = 'Nosotros';
+      document.getElementById('mobileNavServicios').textContent = 'Servicios';
+      document.getElementById('mobileNavProductos').textContent = 'Productos +';
+      document.getElementById('mobileNavContacto').textContent = 'Contacto';
       
       // Hero section
       document.getElementById('mainTitle').innerHTML = 'SOLUMAQ = <span class="text-solumaqYellow">soluciones que impulsan tu productividad</span>';
