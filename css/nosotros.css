@@ -1,0 +1,177 @@
+:root {
+    --yellow: #f7b500;
+}
+
+.top-accent {
+    background: var(--yellow);
+    height: 12px;
+}
+
+.section-line {
+    height: 5px;
+    background: var(--yellow);
+    margin: 0;
+    width: 100%;
+}
+
+.title-lux-line {
+    border-left: 6px solid var(--yellow);
+    padding-left: 8px;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Línea divisoria para la sección Nosotros */
+.nosotros-divider {
+    height: 8px;
+    background: var(--yellow);
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* Estilos para la sección de equipo */
+.equipo-bg {
+    background-image: url('https://example.com/equipo-background.jpg'); /* Cambia la URL según sea necesario */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.equipo-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.dark .equipo-bg::before {
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0.95) 100%);
+}
+
+/* Mejoras para las tarjetas de equipo */
+.equipo-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .equipo-card:hover {
+    box-shadow: 0 10px 25px rgba(247, 181, 0, 0.2);
+}
+
+/* Estilos para imágenes de equipo */
+.equipo-img {
+    height: 180px;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.dark .equipo-img {
+    background-color: #2d2d2d;
+    color: #a0a0a0;
+}
+
+.equipo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para el menú hamburguesa */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #0b0b0b;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.dark .hamburger span {
+    background-color: #ffffff;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-nav {
+        display: none;
+    } 
+
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+    }
+
+    .dark .mobile-menu {
+        background-color: #1a1a1a;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-menu a {
+        display: block;
+        padding: 12px 20px;
+        border-bottom: 1px solid #e5e7eb;
+        color: #0b0b0b;
+    }
+
+    .dark .mobile-menu a {
+        color: #ffffff;
+        border-bottom: 1px solid #374151;
+    }
+
+    .mobile-menu a:hover {
+        background-color: #f3f4f6;
+    }
+
+    .dark .mobile-menu a:hover {
+        background-color: #2d2d2d;
+    }
+}
