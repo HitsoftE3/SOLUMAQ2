@@ -49,6 +49,8 @@ p {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 100%);
 }
 
+
+
 .dark .equipo-bg::before {
     background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0.95) 100%);
 }
