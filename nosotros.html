@@ -1,95 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-    <link rel="stylesheet" href="css/nosotros.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Sólumaq</title>
+  <link rel="stylesheet" href="css/nosotros.css">
 </head>
 <body>
-      <div class="w-full top-accent"></div>
 
-      
-  <!-- HEADER SUPERIOR CON TELÉFONO Y CONFIGURACIONES -->
-  <div class="bg-gray-100 dark:bg-gray-800 py-2 text-sm">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <!-- Espacio vacío a la izquierda para balancear -->
-      <div class="w-24"></div>
-      
-      <!-- Teléfono en el centro -->
-      <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-        <span>📞</span>
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="top-content">
+      <div class="left-space"></div>
+
+      <div class="contact-info">
+        <span class="icon">📞</span>
         <span id="phoneText">(809) 706-3525</span>
       </div>
-      
-      <!-- Configuraciones a la derecha -->
-      <div class="flex items-center gap-6">
-        <!-- Interruptor de modo oscuro -->
-        <div class="flex items-center gap-2">
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="darkModeText">Modo oscuro</span>
+
+      <div class="settings">
+        <div class="dark-mode-toggle">
+          <span id="darkModeText">Modo oscuro</span>
           <label class="switch">
             <input type="checkbox" id="darkModeToggle">
             <span class="slider"></span>
           </label>
         </div>
-        
-        <!-- Interruptor de idioma -->
-        <div class="flex items-center gap-2">
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="languageText">Español</span>
+
+        <div class="language-toggle">
+          <span id="languageText">Español</span>
           <label class="switch">
             <input type="checkbox" id="languageToggle">
             <span class="slider"></span>
           </label>
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="languageText2">English</span>
+          <span id="languageText2">English</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- HEADER PRINCIPAL -->
-  <header class="bg-white dark:bg-darkBg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 relative">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-        <!-- Logo y nombre -->
-        <div class="flex items-center justify-between">
-          <div class="flex flex-col items-start">
-            <div class="text-3xl font-extrabold tracking-wide">
-              <span class="text-solumaqBlack dark:text-white">SÓLU</span>
-              <span class="text-solumaqYellow">MAQ</span>
-            </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400 uppercase mt-1" id="subtitleText">Soluciones en Maquinaria</div>
-          </div>
-          
-          <!-- Botón hamburguesa para móviles -->
-          <div class="hamburger md:hidden" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+  <!-- Encabezado principal -->
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo-text">
+          <h1>SÓLU
+            <span style="color: yellow;">MAQ</span></h1>
+          <p id="subtitleText">Soluciones en Maquinaria</p>
         </div>
-        
-        <!-- Navegación desktop -->
-        <nav class="desktop-nav hidden md:block">
-          <div class="flex gap-6 text-sm font-medium">
-            <a href="#inicio" class="hover:text-solumaqYellow transition-colors dark:text-gray-300" id="navInicio">Inicio</a>
-            <a href="#nosotros" class="hover:text-solumaqYellow transition-colors dark:text-gray-300" id="navNosotros">Nosotros</a>
-            <a href="#servicios" class="hover:text-solumaqYellow transition-colors dark:text-gray-300" id="navServicios">Servicios</a>
-            <a href="#productos" class="hover:text-solumaqYellow transition-colors dark:text-gray-300" id="navProductos">Productos +</a>
-            <a href="#contacto" class="hover:text-solumaqYellow transition-colors dark:text-gray-300" id="navContacto">Contacto</a>
-          </div>
-        </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      
-      <!-- Menú móvil -->
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#inicio" class="hover:text-solumaqYellow transition-colors" id="mobileNavInicio">Inicio</a>
-        <a href="#nosotros" class="hover:text-solumaqYellow transition-colors" id="mobileNavNosotros">Nosotros</a>
-        <a href="#servicios" class="hover:text-solumaqYellow transition-colors" id="mobileNavServicios">Servicios</a>
-        <a href="#productos" class="hover:text-solumaqYellow transition-colors" id="mobileNavProductos">Productos +</a>
-        <a href="#contacto" class="hover:text-solumaqYellow transition-colors" id="mobileNavContacto">Contacto</a>
-      </div>
+
+      <nav class="navigation">
+        <a href="/index.html" id="navInicio">Inicio</a>
+        <a href="/nosotros.html" id="navNosotros">Nosotros</a>
+        <a href="#servicios" id="navServicios">Servicios</a>
+        <a href="#productos" id="navProductos">Productos +</a>
+        <a href="#contacto" id="navContacto">Contacto</a>
+      </nav>
     </div>
   </header>
+
+  <!-- Sección principal -->
+  <section class="about-section">
+    <h2>¿Quiénes Somos?</h2>
+
+    <p>
+      SOLUMAQ surge con la visión de reunir en un solo lugar soluciones en
+      maquinaria, repuestos y herramientas de las marcas más reconocidas del
+      mundo. Hoy somos un aliado estratégico en construcción, minería e industria,
+      ofreciendo la línea más amplia de martillos hidráulicos junto con respaldo,
+      garantía y confianza que aseguran la continuidad de tus proyectos.
+    </p>
+
+    <p>
+      Trabajamos para que cada cliente encuentre en nosotros un socio confiable,
+      capaz de ofrecer disponibilidad inmediata, soporte especializado y soluciones
+      que impulsan la productividad en cada obra. Porque en SOLUMAQ, la calidad
+      no es opcional, es parte integral de nuestro servicio.
+    </p>
+  </section>
+
+  <section class="mission-vision-section">
+    <div class="mission">
+      <h3>Misión</h3>
+      <p>
+        Ofrecer herramientas, repuestos e implementos para
+        maquinarias pesadas que garanticen confianza, disponibilidad
+        y precios justos, apoyando a empresas que dependen de
+        equipos industriales, agrícolas, de construcción y minería, con
+        un catálogo variado y marcas reconocidas a nivel internacional.
+      </p>
+    </div>
+
+    <div class="vision">
+      <h3>Visión</h3>
+      <p>
+        Expandirnos como un referente en soluciones para maquinaria
+        pesada en la región, ampliando nuestra presencia en sectores
+        como el agrícola, la construcción y la minería, y
+        consolidándonos como la opción más confiable por nuestra
+        variedad, eficiencia y compromiso con el cliente.
+      </p>
+    </div>
+
+    <div class="valores">
+      <h3>Valores</h3>
+      <p>
+        En <span>SOLUMAQ</span> trabajamos guiados por valores que definen nuestra forma de servir. La confianza nos impulsa a ser un proveedor
+        transparente, responsable y accesible. Nuestro compromiso se refleja en el acompañamiento constante de cada operación, con seriedad y
+        visión a largo plazo. Y bajo la responsabilidad, asumimos cada pedido, consulta o acuerdo con la firme intención de brindar respuestas
+        claras, cumplir los plazos y ofrecer soluciones reales cuando más se necesitan.
+      </p>
+    </div>
+  </section>
 
 </body>
 </html>
