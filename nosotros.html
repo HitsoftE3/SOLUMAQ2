@@ -3,68 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Nosotros - Sólumaq</title>
-  <link rel="stylesheet" href="css/nosotros.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/nosotros.css"> 
+
 </head>
 <body>
+  <!-- Header -->
+  <div id="header"></div>
 
-  <!-- Barra superior -->
-  <div class="top-bar">
-    <div class="top-content">
-      <div class="left-space"></div>
-
-      <div class="contact-info">
-        <span class="icon">📞</span>
-        <span id="phoneText">(809) 706-3525</span>
-      </div>
-
-      <div class="settings">
-        <div class="dark-mode-toggle">
-          <span id="darkModeText">Modo oscuro</span>
-          <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider"></span>
-          </label>
-        </div>
-
-        <div class="language-toggle">
-          <span id="languageText">Español</span>
-          <label class="switch">
-            <input type="checkbox" id="languageToggle">
-            <span class="slider"></span>
-          </label>
-          <span id="languageText2">English</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Encabezado principal -->
-  <header class="main-header">
-    <div class="header-content">
-      <div class="logo-section">
-        <div class="logo-text">
-          <h1>SÓLU
-            <span style="color: yellow;">MAQ</span></h1>
-          <p id="subtitleText">Soluciones en Maquinaria</p>
-        </div>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <nav class="navigation">
-        <a href="index.html" id="navInicio">Inicio</a>
-        <a href="nosotros.html" id="navNosotros">Nosotros</a>
-        <a href="#servicios" id="navServicios">Servicios</a>
-        <a href="#productos" id="navProductos">Productos +</a>
-        <a href="#contacto" id="navContacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
+  
   <!-- Sección principal -->
   <section class="about-section">
     <h2>¿Quiénes Somos?</h2>
@@ -119,5 +68,18 @@
     </div>
   </section>
 
+  <!-- Footer -->
+    <div id="footer"></div>
+    
+     <script>
+      // Cargar encabezado y pie dinámicamente
+      fetch("header.html")
+        .then(r => r.text())
+        .then(h => document.getElementById("header").innerHTML = h);
+
+       fetch("footer.html")
+       .then(r => r.text())
+       .then(f => document.getElementById("footer").innerHTML = f);
+    </script>
 </body>
 </html>
