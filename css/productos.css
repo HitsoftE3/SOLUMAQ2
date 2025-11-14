@@ -1,10 +1,13 @@
-
-
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
+}
+
+/* Separar el main del footer */
+main {
+    margin-bottom: 120px; /* <-- Aumenta si quieres aún más separación */
 }
 
 .productos-title {
@@ -25,6 +28,7 @@ body {
     gap: 60px 80px;
 }
 
+/* ANIMACIÓN DE CRECIMIENTO */
 .item-box-1,
 .item-box-2,
 .item-box-3,
@@ -38,6 +42,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.28s ease-in-out; /* animación suave */
+}
+
+.item-box-1:hover,
+.item-box-2:hover,
+.item-box-3:hover,
+.item-box-4:hover,
+.item-box-5:hover,
+.item-box-6:hover,
+.item-box-7:hover,
+.item-box-8:hover,
+.item-box-9:hover {
+    transform: scale(1.08); /* agrandar */
 }
 
 .item-img-1,
@@ -57,7 +74,7 @@ body {
     border-radius: 0;
 }
 
-/* Images */
+/* IMÁGENES */
 .item-img-1 { background-image: url("https://picsum.photos/seed/h1/260/220"); }
 .item-img-2 { background-image: url("https://picsum.photos/seed/h2/260/220"); }
 .item-img-3 { background-image: url("https://picsum.photos/seed/h3/260/220"); }
@@ -84,4 +101,3 @@ body {
     color: #000000;
     margin-top: 14px;
 }
-
