@@ -5,9 +5,9 @@ body {
     background: #ffffff;
 }
 
-/* Separar el main del footer */
+
 main {
-    margin-bottom: 120px; /* <-- Aumenta si quieres aún más separación */
+    margin-bottom: 120px; 
 }
 
 .productos-title {
@@ -42,7 +42,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.28s ease-in-out; /* animación suave */
+    transition: transform 0.28s ease-in-out;
 }
 
 .item-box-1:hover,
@@ -54,7 +54,7 @@ main {
 .item-box-7:hover,
 .item-box-8:hover,
 .item-box-9:hover {
-    transform: scale(1.15); /* agrandar */
+    transform: scale(1.15);
 }
 
 .item-img-1,

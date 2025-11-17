@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <!-- Header -->
+<main>
   <div id="header"></div>
 
   
@@ -68,11 +68,11 @@
     </div>
   </section>
 
-  <!-- Footer -->
+
     <div id="footer"></div>
-    
+ 
+  </main>
      <script>
-      // Cargar encabezado y pie dinámicamente
       fetch("header.html")
         .then(r => r.text())
         .then(h => document.getElementById("header").innerHTML = h);

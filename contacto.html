@@ -11,10 +11,11 @@
 
   </head>
   <body>
-    <!-- Header -->
-    <div id="header"></div>
 
-    <!-- Contenido -->
+    <main>
+
+    <div id="header"></div>
+     
     <main class="">
       <h1 class="">
         Hola
@@ -24,11 +25,9 @@
       </p>
     </main>
 
-    <!-- Footer -->
     <div id="footer"></div>
     
      <script>
-      // Cargar encabezado y pie dinámicamente
       fetch("header.html")
         .then(r => r.text())
         .then(h => document.getElementById("header").innerHTML = h);
