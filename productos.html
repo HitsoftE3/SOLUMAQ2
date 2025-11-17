@@ -16,81 +16,91 @@
     
     <!-- Header -->
     <div id="header"></div>
+ 
+ <!-- Contenido -->
+ <main class="">
+ 
+ <div class="productos-title">PRODUCTOS</div>
+ 
+ <div class="grid-container">
+ 
+ <div class="item-box-1 product-item"
+    data-title="Martillos Hidráulicos"
+    data-desc="Herramientas de alto rendimiento ideales para demolición, excavación y trabajos pesados."
+    data-img="https://picsum.photos/seed/h1/600/400">
     
-    <!-- Contenido -->
-    <main class="">
-      
-    <div class="productos-title">PRODUCTOS</div>
+    <div class="item-img-1"></div>
+    <div class="item-text-1">MARTILLOS HIDRÁULICOS</div>
+ </div>
 
-    <div class="grid-container">
-
-    <div class="item-box-1">
-        <div class="item-img-1"></div>
-        <div class="item-text-1">MARTILLOS HIDRÁULICOS</div>
-    </div>
-
-    <div class="item-box-2">
-        <div class="item-img-2"></div>
-        <div class="item-text-2">CUCHARONES DE EXCAVACIÓN</div>
-    </div>
-
-    <div class="item-box-3">
-        <div class="item-img-3"></div>
-        <div class="item-text-3">CINCEL PARA MARTILLOS</div>
-    </div>
-
-    <div class="item-box-4">
-        <div class="item-img-4"></div>
-        <div class="item-text-4">Repuestos y Filtros</div>
-    </div>
-
-    <div class="item-box-5">
-        <div class="item-img-5"></div>
-        <div class="item-text-5">Montacargas</div>
-    </div>
-
-    <div class="item-box-6">
-        <div class="item-img-6"></div>
-        <div class="item-text-6">Generadores Eléctricos</div>
-    </div>
-
-    <div class="item-box-7">
-        <div class="item-img-7"></div>
-        <div class="item-text-7">Compresores de aire</div>
-    </div>
-
-    <div class="item-box-8">
-        <div class="item-img-8"></div>
-        <div class="item-text-8">Torres de iluminación</div>
-    </div>
-
-    <div class="item-box-9">
-        <div class="item-img-9"></div>
-        <div class="item-text-9">Minicargadores</div>
-    </div>
-
-    </div>
-      
-    </main>
-
-      
-    <!-- Footer -->
-    <div id="footer"></div>
+  <div class="item-box-2 product-item"
+    data-title="CUCHARONES DE EXCAVACIÓN"
+    data-desc="Texto de Ejemplo, un ejemplo de ejemplo hasta que se pueda dar texto. un saludo"
+    data-img="https://picsum.photos/seed/h2/600/400">
     
-    
-     <script>
-      // Cargar encabezado y pie dinámicamente
-      fetch("header.html")
-        .then(r => r.text())
-        .then(h => document.getElementById("header").innerHTML = h);
-
-       fetch("footer.html")
-       .then(r => r.text())
-       .then(f => document.getElementById("footer").innerHTML = f);
-    </script>
-      
-  </body>
-</html>
+    <div class="item-img-2"></div>
+    <div class="item-text-2">CUCHARONES DE EXCAVACIÓN</div>
+ </div>
+ 
+<!-- Continuar --> 
+ 
+ <div class="item-box-3">
+ <div class="item-img-3"></div>
+ <div class="item-text-3">CINCEL PARA MARTILLOS</div>
+ </div>
+ 
+ <div class="item-box-4">
+ <div class="item-img-4"></div>
+ <div class="item-text-4">Repuestos y Filtros</div>
+ </div>
+ 
+ <div class="item-box-5">
+ <div class="item-img-5"></div>
+ <div class="item-text-5">Montacargas</div>
+ </div>
+ 
+ <div class="item-box-6">
+ <div class="item-img-6"></div>
+ <div class="item-text-6">Generadores Eléctricos</div>
+ </div>
+ 
+ <div class="item-box-7">
+ <div class="item-img-7"></div>
+ <div class="item-text-7">Compresores de aire</div>
+ </div>
+ 
+ <div class="item-box-8">
+ <div class="item-img-8"></div>
+ <div class="item-text-8">Torres de iluminación</div>
+ </div>
+ 
+ <div class="item-box-9">
+ <div class="item-img-9"></div>
+ <div class="item-text-9">Minicargadores</div>
+ </div>
+ 
+ </div>
+ 
+ <!-- Modal -->
+    <div id="productModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50">
+        <div class="bg-white max-w-md w-full rounded-lg shadow-lg relative p-4">
+            
+            <!-- Botón cerrar -->
+            <button id="closeModal" class="absolute top-2 right-2 text-xl font-bold cursor-pointer">&times;</button>
+            
+            <!-- Imagen -->
+            <img id="modalImg" src="" class="w-full h-56 object-cover rounded">
+            
+            <!-- Título -->
+            <h2 id="modalTitle" class="text-2xl font-bold mt-4"></h2>
+            
+            <!-- Descripción -->
+            <p id="modalDesc" class="mt-2 text-gray-700"></p>
+        </div>
+    </div>
+</main>
+ 
+      <script src="js/productos.js"></script>
 
     <!-- Footer -->
     <div id="footer"></div>
