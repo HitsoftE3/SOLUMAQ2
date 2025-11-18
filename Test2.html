@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlas Copco – Generadores</title>
+    <link rel="stylesheet" href="css/Test2.css">
+  </head>
+
+<body>
+
+  <div id="header"></div>  
+
+  <!-- HERO -->
+  <div class="hero-container">
+    <div class="hero-content">
+        <div class="hero-text">
+            <div class="hero-title-line1">ENERGÍA CONFIABLE</div>
+            <div class="hero-title-line2">EN CADA MOMENTO</div>
+        </div>
+        <img src="https://picsum.photos/id/15/420/260" class="hero-image"/>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="desc-section">
+    <div class="desc-title">GENERADORES ELÉCTRICOS</div>
+    <div class="desc-text">
+      Los generadores Atlas Copco ofrecen potencia segura, eficiencia de combustible y un desempeño probado 
+      a nivel mundial. Diseñados para trabajar en los entornos más exigentes, combinan motores Kubota y 
+      alternadores Leroy Somer para brindar un respaldo energético confiable que mantiene tus proyectos 
+      siempre en marcha.
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products-container">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card-wrap">
+        <div class="card">
+          <img src="https://picsum.photos/id/15/260/150" class="card-img"/>
+          <div class="card-title">QAS 20</div>
+
+          <div class="card-grid">
+              <div>
+                <div class="card-label">Tensión nominal</div>
+                <div class="card-value">400 / 480 V</div>
+              </div>
+              <div>
+                <div class="card-label">Potencia nominal</div>
+                <div class="card-value">22 | 27 kVA</div>
+              </div>
+              <div>
+                <div class="card-label">Motor</div>
+                <div class="card-value">Kubota<br>V2403M-BG</div>
+              </div>
+              <div>
+                <div class="card-label">Tanque de combustible</div>
+                <div class="card-value">115 L</div>
+              </div>
+          </div>
+
+          <button class="card-btn">Cotizar</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card-wrap">
+        <div class="card">
+          <img src="https://picsum.photos/id/15/260/150" class="card-img"/>
+          <div class="card-title">QAS 30</div>
+
+          <div class="card-grid">
+              <div>
+                <div class="card-label">Tensión nominal</div>
+                <div class="card-value">400 / 480 V</div>
+              </div>
+              <div>
+                <div class="card-label">Potencia nominal</div>
+                <div class="card-value">35 | 42.4 kVA</div>
+              </div>
+              <div>
+                <div class="card-label">Motor</div>
+                <div class="card-value">Kubota<br>V3300D</div>
+              </div>
+              <div>
+                <div class="card-label">Tanque de combustible</div>
+                <div class="card-value">92 / 292 L</div>
+              </div>
+          </div>
+
+          <button class="card-btn">Cotizar</button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card-wrap">
+        <div class="card">
+          <img src="https://picsum.photos/id/15/260/150" class="card-img"/>
+          <div class="card-title">QAS 40</div>
+
+          <div class="card-grid">
+              <div>
+                <div class="card-label">Tensión nominal</div>
+                <div class="card-value">400 V</div>
+              </div>
+              <div>
+                <div class="card-label">Potencia nominal</div>
+                <div class="card-value">22 | 27 kVA</div>
+              </div>
+              <div>
+                <div class="card-label">Motor</div>
+                <div class="card-value">Kubota<br>V3300DI</div>
+              </div>
+              <div>
+                <div class="card-label">Tanque de combustible</div>
+                <div class="card-value">92 / 292 L</div>
+              </div>
+          </div>
+
+          <button class="card-btn">Cotizar</button>
+        </div>
+      </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+    <script>
+      fetch("header.html")
+        .then(r => r.text())
+        .then(h => document.getElementById("header").innerHTML = h);
+
+       fetch("footer.html")
+       .then(r => r.text())
+       .then(f => document.getElementById("footer").innerHTML = f);
+    </script>
+
+</body>
+</html>
