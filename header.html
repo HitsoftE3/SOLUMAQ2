@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Encabezado - Solumaq</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root { --yellow: #f7b500; }
 
-    .top-accent { 
-      background: var(--yellow);
-      height: 12px; 
-    }
-    
-    .section-line { 
-      height: 5px; 
-      background: var(--yellow);
-      margin: 0; width: 100%; 
-    }
-      
-    .title-lux-line { border-left: 6px solid var(--yellow); padding-left: 8px; }
+    /* =========================================================
+       ===========  LOGO – SIEMPRE BLANCO + AMARILLO ===========
+       ========================================================= */
 
-    /* Interruptores */
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 24px;
+    /* contenedor del logo */
+    .logo-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
     }
-    .switch input { opacity: 0; width: 0; height: 0; }
-    
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 24px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px; width: 16px;
-      left: 4px; bottom: 4px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
-    input:checked + .slider { background-color: var(--yellow); }
-    input:checked + .slider:before { transform: translateX(26px); }
 
-    /* Menú hamburguesa */
-    .mobile-menu { display: none; }
-    .mobile-menu.active { display: block; }
+    /* SÓLU siempre blanco */
+    .logo-part-one {
+      color: #ffffff !important;
+    }
+
+    /* MAQ siempre amarillo */
+    .logo-part-two {
+      color: var(--yellow) !important;
+    }
+
+    /* Slogan (puede cambiar por modo oscuro si quieres) */
+    .logo-slogan {
+      font-size: .65rem;
+      color: #6b7280;
+    }
+    .dark .logo-slogan {
+      color: #9ca3af;
+    }
+
+    /* =========================================================
+       =============== MENÚ MÓVIL + HAMBURGUESA =================
+       ========================================================= */
 
     .hamburger {
       display: none;
@@ -73,140 +58,273 @@
     }
     .dark .hamburger span { background-color: #ffffff; }
 
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
+    .hamburger.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
+    .hamburger.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    .mobile-menu { display: none; }
+    .mobile-menu.active { display: block; }
 
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .desktop-nav { display: none; }
+
       .mobile-menu {
         position: absolute;
         top: 100%; left: 0; right: 0;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
         z-index: 40;
       }
-      .dark .mobile-menu {
-        background-color: #1a1a1a;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      }
+      .dark .mobile-menu { background-color: #1a1a1a; }
+
       .mobile-menu a {
         display: block;
         padding: 12px 20px;
         border-bottom: 1px solid #e5e7eb;
-        color: #0b0b0b;
+        color: #000;
       }
       .dark .mobile-menu a {
         color: #ffffff;
         border-bottom: 1px solid #374151;
       }
-      .mobile-menu a:hover { background-color: #f3f4f6; }
-      .dark .mobile-menu a:hover { background-color: #2d2d2d; }
+    }
+
+    /* =========================================================
+       ===================== SWITCHES ===========================
+       ========================================================= */
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      background-color: #ccc;
+      border-radius: 24px;
+      transition: .4s;
+    }
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: var(--yellow);
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
     }
   </style>
 </head>
 
 <body class="bg-white dark:bg-gray-900">
-  <!-- Barra superior -->
+
+  <!-- BARRA SUPERIOR -->
   <div class="bg-gray-100 dark:bg-gray-800 py-2 text-sm">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-     <div class="w-24"></div>
-
-      <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-        <span>📞</span>
-        <span id="phoneText">(809) 706-3525</span>
-      </div>
-
+    <div class="max-w-7xl mx-auto px-6 flex justify-end items-center">
       <div class="flex items-center gap-6">
 
-        <!-- Modo oscuro -->
-        <div class="flex items-center gap-2">
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="darkModeText">Modo oscuro</span>
-          <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider"></span>
-          </label>
+        <!-- Teléfono -->
+        <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+          <span>📞</span>
+          <span id="phoneText">(809) 706-3525</span>
         </div>
-        
-        <!-- Idioma -->
-        <div class="flex items-center gap-2">
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="languageText">Español</span>
-          <label class="switch">
-            <input type="checkbox" id="languageToggle">
-            <span class="slider"></span>
-          </label>
-          <span class="text-xs text-gray-700 dark:text-gray-300" id="languageText2">English</span>
+
+        <!-- Switches -->
+        <div class="flex items-center gap-6">
+
+          <!-- Modo oscuro -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-700 dark:text-gray-300" id="darkModeText">Modo oscuro</span>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <!-- Idioma -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-700 dark:text-gray-300" id="languageLabel">Español</span>
+            <label class="switch">
+              <input type="checkbox" id="languageToggle">
+              <span class="slider"></span>
+            </label>
+            <span class="text-xs text-gray-700 dark:text-gray-300" id="languageLabel2">English</span>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Header principal -->
+  <!-- HEADER -->
   <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 relative">
+
       <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-        <!-- Logo -->
-        <div class="flex items-center justify-between">
-          <div class="flex flex-col items-start">
 
-            <div class="text-3xl font-extrabold tracking-wide">
-              <span class="text-black dark:text-white">SÓLU</span>
-              <span style="color: var(--yellow);">MAQ</span>
+        <!-- LOGO SIEMPRE BLANCO + AMARILLO -->
+        <div class="flex items-center justify-between w-full md:w-auto">
+
+          <a href="index.html" class="logo-link" aria-label="Volver al inicio">
+            <div class="flex flex-col items-start">
+
+              <div class="text-3xl font-extrabold tracking-wide flex gap-1">
+                <span class="logo-part-one">SÓLU</span>
+                <span class="logo-part-two">MAQ</span>
+              </div>
+
+              <div id="sloganText" class="logo-slogan uppercase mt-1">
+                Soluciones en Maquinaria
+              </div>
+
             </div>
+          </a>
 
-            <div class="text-xs text-gray-500 dark:text-gray-400 uppercase mt-1">Soluciones en Maquinaria</div>
-          </div>
           <div class="hamburger md:hidden" id="hamburger">
             <span></span><span></span><span></span>
           </div>
+
         </div>
 
-        <!-- Navegación -->
+        <!-- NAV DESKTOP -->
         <nav class="desktop-nav hidden md:block">
           <div class="flex gap-6 text-sm font-medium">
-            <a href="index.html"      class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Inicio</a>
-            <a href="nosotros.html"   class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Nosotros</a>
-            <a href="servicios.html"  class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Servicios</a>
-            <a href="productos.html"  class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Productos</a>
-            <a href="contacto.html"   class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Contacto</a>
-            <a href="Test.html"   class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Test</a>
-            <a href="Test2.html"   class="hover:text-[var(--yellow)] dark:text-gray-300 transition-colors">Test2</a>
+            <a href="index.html" id="navInicio">Inicio</a>
+            <a href="nosotros.html" id="navNosotros">Nosotros</a>
+            <a href="servicios.html" id="navServicios">Servicios</a>
+            <a href="productos.html" id="navProductos">Productos</a>
+            <a href="contacto.html" id="navContacto">Contacto</a>
+            <a href="Test.html" id="navTest">Test</a>
+            <a href="Test2.html" id="navTest2">Test2</a>
           </div>
         </nav>
+
       </div>
 
-      <!-- Menú móvil -->
+      <!-- NAV MÓVIL -->
       <div class="mobile-menu hidden" id="mobileMenu">
-        <a href="index.html"      class="hover:text-[var(--yellow)] block py-2">Inicio</a>
-        <a href="nosotros.html"   class="hover:text-[var(--yellow)] block py-2">Nosotros</a>
-        <a href="servicios.html"  class="hover:text-[var(--yellow)] block py-2">Servicios</a>
-        <a href="productos.html"  class="hover:text-[var(--yellow)] block py-2">Productos</a>
-        <a href="contacto.html"   class="hover:text-[var(--yellow)] block py-2">Contacto</a>
-        <a href="Test.html"       class="hover:text-[var(--yellow)] block py-2">Test</a>
-        <a href="Test2.html"      class="hover:text-[var(--yellow)] block py-2">Test2</a>
+        <a href="index.html"      id="mInicio">Inicio</a>
+        <a href="nosotros.html"   id="mNosotros">Nosotros</a>
+        <a href="servicios.html"  id="mServicios">Servicios</a>
+        <a href="productos.html"  id="mProductos">Productos</a>
+        <a href="contacto.html"   id="mContacto">Contacto</a>
+        <a href="Test.html"       id="mTest">Test</a>
+        <a href="Test2.html"      id="mTest2">Test2</a>
       </div>
+
     </div>
   </header>
 
-  <script>
-    // Modo oscuro
-    const darkToggle = document.getElementById('darkModeToggle');
-    darkToggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark', darkToggle.checked);
-    });
+<script>
+/* ============================
+   MODO OSCURO
+============================ */
+const darkToggle = document.getElementById("darkModeToggle");
 
-    // Menú móvil
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+if (localStorage.getItem("darkMode") === "true") {
+  document.body.classList.add("dark");
+  darkToggle.checked = true;
+}
+darkToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark", darkToggle.checked);
+  localStorage.setItem("darkMode", darkToggle.checked);
+});
+
+/* ============================
+   IDIOMA
+============================ */
+const languageToggle  = document.getElementById("languageToggle");
+
+const labels = {
+  slogan: document.getElementById("sloganText"),
+  darkModeText: document.getElementById("darkModeText"),
+  lang1: document.getElementById("languageLabel"),
+  lang2: document.getElementById("languageLabel2"),
+  inicio: document.getElementById("navInicio"),
+  nosotros: document.getElementById("navNosotros"),
+  servicios: document.getElementById("navServicios"),
+  productos: document.getElementById("navProductos"),
+  contacto: document.getElementById("navContacto"),
+  test: document.getElementById("navTest"),
+  test2: document.getElementById("navTest2"),
+  mInicio: document.getElementById("mInicio"),
+  mNosotros: document.getElementById("mNosotros"),
+  mServicios: document.getElementById("mServicios"),
+  mProductos: document.getElementById("mProductos"),
+  mContacto: document.getElementById("mContacto"),
+  mTest: document.getElementById("mTest"),
+  mTest2: document.getElementById("mTest2"),
+};
+
+function updateLanguage(lang) {
+  if (lang === "en") {
+    labels.lang1.textContent = "Spanish";
+    labels.lang2.textContent = "English";
+    labels.slogan.textContent = "Machinery Solutions";
+    labels.darkModeText.textContent = "Dark mode";
+    labels.inicio.textContent = labels.mInicio.textContent = "Home";
+    labels.nosotros.textContent = labels.mNosotros.textContent = "About Us";
+    labels.servicios.textContent = labels.mServicios.textContent = "Services";
+    labels.productos.textContent = labels.mProductos.textContent = "Products";
+    labels.contacto.textContent = labels.mContacto.textContent = "Contact";
+    labels.test.textContent = labels.mTest.textContent = "Test";
+    labels.test2.textContent = labels.mTest2.textContent = "Test 2";
+  } else {
+    labels.lang1.textContent = "Español";
+    labels.lang2.textContent = "English";
+    labels.slogan.textContent = "Soluciones en Maquinaria";
+    labels.darkModeText.textContent = "Modo oscuro";
+    labels.inicio.textContent = labels.mInicio.textContent = "Inicio";
+    labels.nosotros.textContent = labels.mNosotros.textContent = "Nosotros";
+    labels.servicios.textContent = labels.mServicios.textContent = "Servicios";
+    labels.productos.textContent = labels.mProductos.textContent = "Productos";
+    labels.contacto.textContent = labels.mContacto.textContent = "Contacto";
+    labels.test.textContent = labels.mTest.textContent = "Test";
+    labels.test2.textContent = labels.mTest2.textContent = "Test2";
+  }
+}
+
+const storedLang = localStorage.getItem("language");
+if (storedLang) {
+  languageToggle.checked = storedLang === "en";
+  updateLanguage(storedLang);
+}
+
+languageToggle.addEventListener("change", () => {
+  const lang = languageToggle.checked ? "en" : "es";
+  updateLanguage(lang);
+  localStorage.setItem("language", lang);
+});
+
+/* ============================
+   MENÚ MÓVIL
+============================ */
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+
+  if (mobileMenu.classList.contains("active")) {
+    mobileMenu.classList.remove("hidden");
+  } else {
+    mobileMenu.classList.add("hidden");
+  }
+});
+</script>
+
 </body>
 </html>
