@@ -11,9 +11,9 @@
 </head>
 <body>
 <main>
+
   <div id="header"></div>
 
-  
   <!-- Sección principal -->
   <section class="about-section">
     <h2>¿Quiénes Somos?</h2>
@@ -72,14 +72,35 @@
     <div id="footer"></div>
  
   </main>
-     <script>
-      fetch("header.html")
-        .then(r => r.text())
-        .then(h => document.getElementById("header").innerHTML = h);
 
-       fetch("footer.html")
-       .then(r => r.text())
-       .then(f => document.getElementById("footer").innerHTML = f);
-    </script>
+  <!-- CARGA DE HEADER Y FOOTER -->
+  <script>
+  async function loadComponent(id, file) {
+    const container = document.getElementById(id);
+    const response = await fetch(file);
+    const html = await response.text();
+
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+ 
+  container.innerHTML = html;
+
+  temp.querySelectorAll("script").forEach(oldScript => {
+    const newScript = document.createElement("script");
+
+    if (oldScript.src) {
+      newScript.src = oldScript.src;
+    } else {
+      newScript.textContent = oldScript.textContent;
+    }
+
+    document.body.appendChild(newScript);
+  });
+}
+
+loadComponent("header", "header.html");
+loadComponent("footer", "footer.html");
+</script>
+
 </body>
 </html>
